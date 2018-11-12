@@ -9,7 +9,7 @@ import javax.annotation.Generated;
 public class Brewery {
 
     @SerializedName("id")
-    private long id;
+    private int id;
 
     @SerializedName("name")
     private String name;
@@ -81,7 +81,7 @@ public class Brewery {
 
     public static class BreweryBuilder {
 
-        private long id;
+        private int id;
         private String name;
         private String street;
         private String city;

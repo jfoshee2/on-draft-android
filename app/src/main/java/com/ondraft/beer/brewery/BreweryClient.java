@@ -17,7 +17,7 @@ public interface BreweryClient {
      * call to Open Brewery DB server
      * @return general list of breweries from Open Brewery DB
      */
-    @GET
+    @GET("breweries")
     Observable<List<Brewery>> getBreweries();
 
     /**

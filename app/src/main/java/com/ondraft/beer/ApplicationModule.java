@@ -1,5 +1,7 @@
 package com.ondraft.beer;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.ondraft.beer.brewery.BreweryClient;
 import com.ondraft.beer.brewery.BreweryRestAdapter;
 
@@ -30,7 +32,7 @@ public class ApplicationModule {
 
         return new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://api.openbrewerydb.org/breweries")
+                .baseUrl("https://api.openbrewerydb.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.ondraft.beer.brewery.Brewery;
+import com.ondraft.beer.brewery.BreweryArrayAdapter;
 import com.ondraft.beer.brewery.BreweryClient;
 import com.ondraft.beer.brewery.BreweryRestAdapter;
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void adaptListView(List<Brewery> breweries) {
-        System.out.println(breweries);
+        breweryListView.setAdapter(new BreweryArrayAdapter(MainActivity.this, breweries));
     }
 
     @Override

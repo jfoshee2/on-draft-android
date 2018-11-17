@@ -53,6 +53,6 @@ public interface BreweryClient {
      * @param id - unique id of the brewery to be returned
      * @return single instance of the Brewery class by id
      */
-    @GET("{id}")
-    Observable<Brewery> getBreweryById(@Path("id") long id);
+    @GET("breweries/{id}")
+    Observable<Brewery> getBreweryById(@Path("id") int id);
 }

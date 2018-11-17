@@ -1,5 +1,6 @@
 package com.ondraft.beer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 import com.ondraft.beer.brewery.Brewery;
 import com.ondraft.beer.brewery.BreweryArrayAdapter;
 import com.ondraft.beer.brewery.BreweryClient;
+import com.ondraft.beer.brewery.BreweryDetailActivity;
 import com.ondraft.beer.brewery.BreweryRestAdapter;
 
 import java.util.List;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     BreweryRestAdapter breweryRestAdapter;
 
     private ListView breweryListView;
+    private Intent breweryDetailIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         breweryListView = findViewById(R.id.brewery_list_view);
+        breweryDetailIntent = new Intent(this, BreweryDetailActivity.class);
 
         DaggerApplicationComponent.builder().build().injectActivity(this);
 
@@ -46,18 +50,19 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::adaptListView);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     private void adaptListView(List<Brewery> breweries) {
         breweryListView.setAdapter(new BreweryArrayAdapter(MainActivity.this, breweries));
+
+        breweryListView.setOnItemClickListener((adapterView, view, i, l) -> {
+
+            Brewery brewery = (Brewery) breweryListView.getItemAtPosition(i);
+
+            breweryDetailIntent.putExtra("id", brewery.getId());
+
+            startActivity(breweryDetailIntent);
+        });
     }
 
     @Override

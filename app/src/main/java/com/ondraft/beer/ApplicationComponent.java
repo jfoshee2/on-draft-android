@@ -1,8 +1,6 @@
 package com.ondraft.beer;
 
-import android.app.Activity;
-
-import com.ondraft.beer.brewery.BreweryRestAdapter;
+import com.ondraft.beer.brewery.BreweryDetailActivity;
 
 import javax.inject.Singleton;
 
@@ -13,4 +11,6 @@ import dagger.Component;
 public interface ApplicationComponent {
 
     void injectActivity(MainActivity activity);
+
+    void injectActivity(BreweryDetailActivity activity);
 }

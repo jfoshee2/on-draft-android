@@ -17,7 +17,6 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
-import static io.reactivex.internal.operators.flowable.FlowableBlockingSubscribe.subscribe;
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 

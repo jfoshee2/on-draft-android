@@ -8,4 +8,9 @@
     tools:context="com.ondraft.beer.brewery.BreweryDetailActivity"
     tools:showIn="@layout/activity_brewery_detail">
 
+    <TextView
+        android:id="@+id/brewery_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>

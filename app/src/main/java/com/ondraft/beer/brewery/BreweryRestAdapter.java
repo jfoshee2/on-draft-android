@@ -45,7 +45,7 @@ public class BreweryRestAdapter {
         return breweryClient.getBreweriesByName(name);
     }
 
-    public Observable<Brewery> getBreweryById(long id) {
+    public Observable<Brewery> getBreweryById(int id) {
         return breweryClient.getBreweryById(id);
     }
 }

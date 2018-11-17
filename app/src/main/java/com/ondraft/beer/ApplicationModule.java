@@ -1,7 +1,5 @@
 package com.ondraft.beer;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.ondraft.beer.brewery.BreweryClient;
 import com.ondraft.beer.brewery.BreweryRestAdapter;
 

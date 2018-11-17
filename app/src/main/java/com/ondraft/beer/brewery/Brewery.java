@@ -47,7 +47,7 @@ public class Brewery {
         return new BreweryBuilder();
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

@@ -26,7 +26,7 @@ public interface BreweryClient {
      * @param city - parameter to search breweries by
      * @return list of breweries from Open Brewery DB filtered by city
      */
-    @GET
+    @GET("breweries")
     Observable<List<Brewery>> getBreweriesByCity(@Query("by_city") String city);
 
     /**
@@ -35,7 +35,7 @@ public interface BreweryClient {
      * @param state - parameter to search breweries by
      * @return list of breweries from Open Brewery DB filtered by state
      */
-    @GET
+    @GET("breweries")
     Observable<List<Brewery>> getBreweriesByState(@Query("by_state") String state);
 
     /**
@@ -44,7 +44,7 @@ public interface BreweryClient {
      * @param name - parameter to search breweries by
      * @return list of breweries from Open Brewery DB filtered by name
      */
-    @GET
+    @GET("breweries")
     Observable<List<Brewery>> getBreweriesByName(@Query("by_name") String name);
 
     /**
